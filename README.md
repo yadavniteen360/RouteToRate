@@ -31,23 +31,6 @@ Daily mandi arrivals and modal prices for hundreds of commodities across hundred
 
 ---
 
-## Project Structure
-
-```
-kisanapp/
-├── client/          # React frontend
-│   ├── public/
-│   └── src/
-│       ├── components/
-│       ├── pages/
-│       └── services/
-├── server/          # Node.js + Express backend
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   └── services/    # Mandi data ingestion & caching
-└── README.md
-```
 
 ---
 
@@ -104,13 +87,3 @@ Mandi prices are published daily by the government. But they live in spreadsheet
 KisanApp is a thin, fast interface between that data and the person who needs it most — at the moment they need it most.
 
 ---
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
-
----
-
-## License
-
-[MIT](LICENSE)
