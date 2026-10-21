@@ -3,8 +3,13 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cropDemandRoutes from './routes/cropDemandRoutes.js';
 
-// Load environment variables from .env
-dotenv.config();
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Load environment variables from backend/.env
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config(); // fallback to cwd if applicable
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,23 +23,30 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
-    message: 'KisanApp Backend API is running',
+    app: 'RouteToRate',
+    tagline: 'Deduct round-trip fuel & transport — see which mandi delivers the highest net take-home profit.',
     timestamp: new Date().toISOString()
   });
 });
 
-// Crop demand & projections routes
+import mandiRoutes from './routes/mandiRoutes.js';
+
+// Mandi and Projections routes
 app.use('/api/crop-projections', cropDemandRoutes);
 app.use('/api/crop-demand', cropDemandRoutes);
+app.use('/api/mandi-prices', mandiRoutes);
+app.use('/api/ai', mandiRoutes);
 
 // Root route
 app.get('/', (req, res) => {
   res.json({
-    app: 'KisanApp API',
+    app: 'RouteToRate API',
+    tagline: 'Deduct round-trip fuel & transport — see which mandi delivers the highest net take-home profit.',
     version: '1.0.0',
     documentation: '/api/crop-projections/schema',
     endpoints: {
       health: '/api/health',
+      mandiPrices: '/api/mandi-prices',
       cropProjections: '/api/crop-projections',
       schema: '/api/crop-projections/schema'
     }
@@ -59,11 +71,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-import { fileURLToPath } from 'url';
-
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORT, () => {
-    console.log(`🌾 KisanApp Server running on http://localhost:${PORT}`);
+    console.log(`🌾 RouteToRate Server running on http://localhost:${PORT}`);
     console.log(`📊 Schema & Docs: http://localhost:${PORT}/api/crop-projections/schema`);
   });
 }
