@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getApiUrl } from '../config';
 import { Bot, Send, Sparkles, MessageSquare, ShieldAlert, Award } from 'lucide-react';
 
 export default function GemmaAdvisor({ commodity = 'Onion', mandis = [] }) {
@@ -31,15 +32,15 @@ I analyze live APMC arrivals, modal rates, and historical price elasticity to gi
     setIsLoading(true);
 
     try {
-      const res = await fetch('/api/ai/advisor', {
+      const res = await fetch(getApiUrl('/api/ai/advisor'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           prompt: query,
           commodity,
-          currentMandi: mandis[1]?.name || 'Pimpalgaon Baswant',
-          targetMandi: mandis[0]?.name || 'Lasalgaon Mandi',
-          tonnage: 5
+          currentMandi: mandis[0]?.name || 'Dubagga Naveen Mandi',
+          targetMandi: mandis[2]?.name || 'Sitapur Krishi Mandi',
+          quantity: 35
         })
       });
 
