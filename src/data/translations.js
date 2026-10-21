@@ -152,6 +152,28 @@ export const TRANSLATIONS = {
     closeModal: "बंद करें",
     matchedRecordsTitle: "आपकी API Key से प्राप्त लाइव रिकॉर्ड्स:",
 
+    // Visual Bar Chart Visualizer
+    visualChartTitle: "मंडी-वार शुद्ध मुनाफ़ा विज़ुअलाइज़र (Profit Waterfall Visualizer)",
+    visualChartSub: "देखें कि कैसे 60-84 किमी का डीज़ल खर्च अधिक भाव को भी घाटे में बदल देता है।",
+    grossLabel: "कुल बिक्री",
+    fuelCutLabel: "डीज़ल खर्च (कटौती)",
+    netTakeHomeLabel: "जेब में शुद्ध बचत",
+    trapBadge: "धोखा (घाटा)",
+
+    // Digital Mandi Receipt Modal
+    digitalSlipModalTitle: "आधिकारिक डिजिटल मंडी पर्ची",
+    digitalSlipModalSub: "चालक, आढ़ती या परिवार को दिखाने हेतु प्रमाणित रसीद",
+    verifiedStamp: "प्रमाणित रूट-टू-रेट डिजिटल पर्ची",
+    viewReceiptBtn: "डिजिटल पर्ची देखें",
+    printSlip: "प्रिंट / सहेजें",
+    closeModal: "बंद करें",
+    bagsText: "बोरी (50 किग्रा प्रत्येक)",
+
+    // Floating Quick Bar
+    quickBarWinner: "सर्वश्रेष्ठ विकल्प",
+    quickBarNet: "शुद्ध बचत",
+    quickBarSavings: "धोखा मंडी से अधिक बचत",
+
     // Footer
     footerDisclaimer: "किसानों की आर्थिक सुरक्षा हेतु पूर्णतः पारदर्शी एवं निष्पक्ष निर्णय प्रणाली।",
     footerCopyright: "रूट-टू-रेट (RouteToRate) • उत्तर प्रदेश कृषि उत्पादन मंडी परिषद नेटवर्क",
@@ -306,6 +328,28 @@ export const TRANSLATIONS = {
     syncNowBtn: "Sync Live Data",
     closeModal: "Close",
     matchedRecordsTitle: "Live Records Retrieved From Your API Key:",
+
+    // Visual Bar Chart Visualizer
+    visualChartTitle: "Mandi Net Profit Visualizer (Profit Waterfall)",
+    visualChartSub: "See visually how round-trip diesel freight turns seemingly higher gross prices into devastating net losses.",
+    grossLabel: "Gross Sales",
+    fuelCutLabel: "Fuel Deducted",
+    netTakeHomeLabel: "Net Take-Home Cash",
+    trapBadge: "Trap (Net Loss)",
+
+    // Digital Mandi Receipt Modal
+    digitalSlipModalTitle: "Official Digital APMC Mandi Slip",
+    digitalSlipModalSub: "Verified digital receipt for driver, trader, or family records",
+    verifiedStamp: "Verified RouteToRate Digital APMC Slip",
+    viewReceiptBtn: "View Digital Slip",
+    printSlip: "Print / Save",
+    closeModal: "Close",
+    bagsText: "bags (50 kg each)",
+
+    // Floating Quick Bar
+    quickBarWinner: "Top Pick",
+    quickBarNet: "Net Profit",
+    quickBarSavings: "Saved vs Trap Mandi",
 
     // Footer
     footerDisclaimer: "Built for price transparency and farmer economic empowerment.",
