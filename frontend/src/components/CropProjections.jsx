@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getApiUrl } from '../config';
 import { Search, Download, Database, Info, TrendingUp, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function CropProjections({
@@ -28,7 +29,7 @@ export default function CropProjections({
   });
 
   const downloadCsv = () => {
-    window.open('/api/crop-projections?format=csv', '_blank');
+    window.open(getApiUrl('/api/crop-projections?format=csv'), '_blank');
   };
 
   return (

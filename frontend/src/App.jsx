@@ -10,6 +10,7 @@ import FloatingStatsBar from './components/FloatingStatsBar';
 import GemmaAdvisor from './components/GemmaAdvisor';
 import CropProjections from './components/CropProjections';
 import { TRANSLATIONS } from './data/translations';
+import { getApiUrl } from './config';
 import { Trophy, BarChart3, FlaskConical, Bot, LineChart } from 'lucide-react';
 import './App.css';
 
@@ -68,7 +69,8 @@ export default function App() {
           tier
         });
 
-        const res = await fetch(`/api/mandi-prices?${queryParams.toString()}`);
+        const url = getApiUrl(`/api/mandi-prices?${queryParams.toString()}`);
+        const res = await fetch(url);
         if (res.ok) {
           const data = await res.json();
           let fetchedMandis = data.mandis || [];
@@ -107,7 +109,7 @@ export default function App() {
     async function loadProjections() {
       setIsProjectionsLoading(true);
       try {
-        const res = await fetch('/api/crop-projections');
+        const res = await fetch(getApiUrl('/api/crop-projections'));
         if (res.ok) {
           const data = await res.json();
           setProjections(data.records || []);
