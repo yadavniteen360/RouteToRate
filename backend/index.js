@@ -3,8 +3,13 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cropDemandRoutes from './routes/cropDemandRoutes.js';
 
-// Load environment variables from .env
-dotenv.config();
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Load environment variables from backend/.env
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config(); // fallback to cwd if applicable
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -59,7 +64,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-import { fileURLToPath } from 'url';
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORT, () => {
