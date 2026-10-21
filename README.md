@@ -84,6 +84,6 @@ The app will be available at `http://localhost:5173`.
 
 Mandi prices are published daily by the government. But they live in spreadsheets and API responses that require a laptop, an internet connection, and some technical literacy to read. A farmer with a smartphone gets none of this.
 
-KisanApp is a thin, fast interface between that data and the person who needs it most — at the moment they need it most.
+KisanApp is a thin, fast interface between that data and the person who needs it most — at the moment they need it most
 
 ---
